@@ -1,0 +1,1581 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <meta charset="utf-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+  <title>Wbin - Web Business Intelligence</title>
+
+  <link rel="stylesheet" media="screen" href="https://cpwebassets.codepen.io/assets/fullpage/fullpage-1580f96ce81ff0a427cf57dda2748ce646c38efc201ae5942a29958cffa6856d.css" />
+  
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+
+
+
+  <title>CodePen - CSS-Only Cube Pack</title>
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+  <style>
+    html { font-size: 15px; }
+    html, body { margin: 0; padding: 0; min-height: 100%; }
+    body { height:100%; display: flex; flex-direction: column; }
+    .referer-warning {
+      background: black;
+      box-shadow: 0 2px 5px rgba(0,0,0, 0.5);
+      padding: 0.75em;
+      color: white;
+      text-align: center;
+      font-family: var(--cp-font-family);
+      line-height: 1.2;
+      font-size: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+    .referer-warning h1 { font-size: 1.2rem; margin: 0; }
+    .referer-warning a { color: #56bcf9; } /* $linkColorOnBlack */
+  </style>
+</head>
+
+<!--
+<body class="">
+  <div class="referer-warning">
+    <h1>⚠️ Do not enter passwords or personal information on this page. ⚠️</h1>
+      This is a code demo posted by a web developer on <a href="https://codepen.io">codepen.io</a>.
+    <br />
+    A referer from CodePen is required to render this page view, and your browser is not sending one (<a href="https://blog.codepen.io/2017/10/05/regarding-referer-headers/" target="_blank">more details</a>).</h1>
+  </div>
+
+  <div id="result-iframe-wrap" role="main"> 
+  
+  -->
+
+    <iframe
+      id="result"
+      srcdoc="
+<!DOCTYPE html>
+<html lang=&quot;en&quot; >
+
+<head>
+
+  <meta charset=&quot;UTF-8&quot;>
+  
+<link rel=&quot;apple-touch-icon&quot; type=&quot;image/png&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png&quot; />
+<meta name=&quot;apple-mobile-web-app-title&quot; content=&quot;CodePen&quot;>
+
+<link rel=&quot;shortcut icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico&quot; />
+
+<link rel=&quot;mask-icon&quot; type=&quot;image/x-icon&quot; href=&quot;https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg&quot; color=&quot;#111&quot; />
+
+
+  <title>CodePen - CSS-Only Cube Pack</title>
+  
+  <link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css&quot;>
+
+
+
+  
+<style>
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+  -webkit-animation-timing-function: cubic-bezier(0.5, 0, 0, 1) !important;
+          animation-timing-function: cubic-bezier(0.5, 0, 0, 1) !important;
+}
+
+
+/* editado */
+
+body {
+  display:flex;
+  
+  align-items: center;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  background: linear-gradient(to bottom right, #a4c5c7, #2D3F48);
+}
+body:hover > label, body:hover > input {
+  opacity: 1;
+}
+
+label, #shadows {
+  position: fixed;
+  top: 2vmin;
+  opacity: 0.5;
+}
+
+label {
+  left: 6vmin;
+  color: white;
+  font-weight: bold;
+}
+
+#shadows {
+  left: 2vmin;
+}
+
+#shadows:not(:checked) ~ .cubes {
+  --shadow-filter: none;
+}
+
+.cubes {
+  width: 10vmin;
+  height: 10vmin;
+  transform: rotateX(60deg) rotateZ(-45deg);
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  overflow: visible;
+  transform-style: preserve-3d;
+  perspective: 9000px;
+}
+
+.cube, .large-shadow {
+  height: 10vmin;
+  width: 10vmin;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  transform-origin: center center -0.5vmin;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cube > .cube-wrap, .large-shadow > .cube-wrap {
+  -webkit-animation: cube 4s infinite both;
+          animation: cube 4s infinite both;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  transform-origin: center center -0.5vmin;
+  will-change: transform;
+}
+@-webkit-keyframes cube {
+  from, to, 20%, 60% {
+    -webkit-animation-timing-function: step-start;
+            animation-timing-function: step-start;
+    transform: none;
+  }
+  40% {
+    transform: rotateY(-1turn);
+  }
+}
+@keyframes cube {
+  from, to, 20%, 60% {
+    -webkit-animation-timing-function: step-start;
+            animation-timing-function: step-start;
+    transform: none;
+  }
+  40% {
+    transform: rotateY(-1turn);
+  }
+}
+.cube[data-cube^=&quot;1&quot;], .large-shadow[data-cube^=&quot;1&quot;] {
+  top: calc(-10vmin - 2px);
+  --color-bg-top: #A0EBE8;
+  --color-bg-bottom: #89E4E4;
+  --color-fl-top: #4EAFBC;
+  --color-fl-bottom: #43A5B2;
+}
+.cube[data-cube^=&quot;2&quot;], .large-shadow[data-cube^=&quot;2&quot;] {
+  --color-bg-top: #89E4E4;
+  --color-bg-bottom: #76DEE5;
+  --color-fl-top: #43A5B2;
+  --color-fl-bottom: #3D93A9;
+}
+.cube[data-cube^=&quot;3&quot;], .large-shadow[data-cube^=&quot;3&quot;] {
+  top: calc(10vmin + 2px);
+  --color-bg-top: #76DEE5;
+  --color-bg-bottom: #63D3D4;
+  --color-fl-top: #3D93A9;
+  --color-fl-bottom: #3B8D9F;
+}
+.cube[data-cube^=&quot;11&quot;], .cube[data-cube^=&quot;21&quot;], .cube[data-cube^=&quot;31&quot;], .large-shadow[data-cube^=&quot;11&quot;], .large-shadow[data-cube^=&quot;21&quot;], .large-shadow[data-cube^=&quot;31&quot;] {
+  left: calc(-10vmin - 2px);
+  --color-fr-top: #2D505F;
+  --color-fr-bottom: #2D4F63;
+}
+.cube[data-cube^=&quot;12&quot;], .cube[data-cube^=&quot;22&quot;], .cube[data-cube^=&quot;32&quot;], .large-shadow[data-cube^=&quot;12&quot;], .large-shadow[data-cube^=&quot;22&quot;], .large-shadow[data-cube^=&quot;32&quot;] {
+  --color-fr-top: #2D4F63;
+  --color-fr-bottom: #2A5262;
+}
+.cube[data-cube^=&quot;13&quot;], .cube[data-cube^=&quot;23&quot;], .cube[data-cube^=&quot;33&quot;], .large-shadow[data-cube^=&quot;13&quot;], .large-shadow[data-cube^=&quot;23&quot;], .large-shadow[data-cube^=&quot;33&quot;] {
+  left: calc(10vmin + 2px);
+  --color-fr-top: #2A5262;
+  --color-fr-bottom: #2A5467;
+}
+.cube[data-cube$=&quot;2&quot;], .large-shadow[data-cube$=&quot;2&quot;] {
+  transform: translateZ(calc(10vmin + 2px));
+}
+.cube[data-cube$=&quot;3&quot;], .large-shadow[data-cube$=&quot;3&quot;] {
+  transform: translateZ(calc(-10vmin - 2px));
+}
+
+.large-shadows {
+  transform: translateZ(-21vmin);
+}
+
+.large-shadow {
+  background: black;
+  height: 10vmin;
+  width: 10vmin;
+  transform-origin: top right;
+  -webkit-animation: large-shadow 4s infinite both;
+          animation: large-shadow 4s infinite both;
+  filter: var(--shadow-filter, blur(3vmin));
+  opacity: 0.2;
+  will-change: transform;
+}
+@-webkit-keyframes large-shadow {
+  from, 80%, to {
+    transform: scale(1.5, 3);
+  }
+  20% {
+    transform: scale(1.5, 2);
+  }
+  40%, 60% {
+    transform: scale(1.5, 5);
+  }
+  50% {
+    transform: scale(1, 5);
+  }
+}
+@keyframes large-shadow {
+  from, 80%, to {
+    transform: scale(1.5, 3);
+  }
+  20% {
+    transform: scale(1.5, 2);
+  }
+  40%, 60% {
+    transform: scale(1.5, 5);
+  }
+  50% {
+    transform: scale(1, 5);
+  }
+}
+
+[class^=cube-] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+  top: 0;
+  left: 0;
+}
+[class^=cube-], [class^=cube-]:before {
+  will-change: transform;
+  -webkit-animation: any 4s infinite both;
+          animation: any 4s infinite both;
+}
+[class^=cube-]:before {
+  content: &quot;&quot;;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+}
+
+.cube-top {
+  -webkit-animation-name: cube-top;
+          animation-name: cube-top;
+  overflow: hidden;
+}
+.cube-top:before, .cube-top:after {
+  will-change: transform;
+}
+.cube-top:before {
+  background-image: linear-gradient(to bottom, #CBFEFF, transparent), linear-gradient(to bottom, var(--color-bg-top), var(--color-bg-bottom));
+  background-size: 2px 100%, auto;
+  background-repeat: no-repeat;
+}
+.cube-top:after {
+  content: &quot;&quot;;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #DFF4F0;
+  -webkit-animation: cube-top-flash 4s infinite both;
+          animation: cube-top-flash 4s infinite both;
+}
+@-webkit-keyframes cube-top-flash {
+  from, 50%, 60%, to {
+    opacity: 0;
+  }
+  52% {
+    opacity: 0.9;
+  }
+}
+@keyframes cube-top-flash {
+  from, 50%, 60%, to {
+    opacity: 0;
+  }
+  52% {
+    opacity: 0.9;
+  }
+}
+@-webkit-keyframes cube-top {
+  20% {
+    transform: translateZ(calc(-10vmin + 2vmin));
+  }
+  40%, 60%, 80% {
+    transform: none;
+  }
+}
+@keyframes cube-top {
+  20% {
+    transform: translateZ(calc(-10vmin + 2vmin));
+  }
+  40%, 60%, 80% {
+    transform: none;
+  }
+}
+
+.cube-front-left {
+  transform-origin: left center;
+  transform: rotateY(90deg);
+  overflow: hidden;
+}
+.cube-front-left:before {
+  background-image: linear-gradient(to bottom, var(--color-fl-top), var(--color-fl-bottom)), linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent 60%);
+  background-size: auto auto 1px 100%;
+  background-repeat: no-repeat;
+  transform-origin: right;
+  -webkit-animation-name: cube-front-left;
+          animation-name: cube-front-left;
+  will-change: transform;
+}
+@-webkit-keyframes cube-front-left {
+  20% {
+    transform: scaleX(0.2);
+  }
+  40%, 60% {
+    transform: translateX(-8vmin) scaleX(0.2);
+  }
+  80% {
+    transform: none;
+  }
+}
+@keyframes cube-front-left {
+  20% {
+    transform: scaleX(0.2);
+  }
+  40%, 60% {
+    transform: translateX(-8vmin) scaleX(0.2);
+  }
+  80% {
+    transform: none;
+  }
+}
+
+.cube-front-right {
+  transform-origin: bottom center;
+  transform: rotateX(90deg);
+}
+.cube-front-right:before {
+  background-image: linear-gradient(to right, var(--color-fr-top), var(--color-fr-bottom));
+  transform-origin: top;
+  -webkit-animation-name: cube-front-right;
+          animation-name: cube-front-right;
+  will-change: transform;
+}
+@-webkit-keyframes cube-front-right {
+  20% {
+    transform: scaleY(0.2);
+  }
+  40%, 60% {
+    transform: translateY(8vmin) scaleY(0.2);
+  }
+  80% {
+    transform: none;
+  }
+}
+@keyframes cube-front-right {
+  20% {
+    transform: scaleY(0.2);
+  }
+  40%, 60% {
+    transform: translateY(8vmin) scaleY(0.2);
+  }
+  80% {
+    transform: none;
+  }
+}
+
+.cube-bottom {
+  transform: translateZ(-10vmin);
+  background-image: linear-gradient(to bottom, var(--color-bg-top), var(--color-bg-bottom));
+  -webkit-animation-name: cube-bottom;
+          animation-name: cube-bottom;
+}
+@-webkit-keyframes cube-bottom {
+  from, 20%, 80%, to {
+    transform: translateZ(calc(-10vmin + 1px)) scale(0.95);
+  }
+  40%, 60% {
+    transform: translateZ(-2vmin) scale(0.95);
+  }
+}
+@keyframes cube-bottom {
+  from, 20%, 80%, to {
+    transform: translateZ(calc(-10vmin + 1px)) scale(0.95);
+  }
+  40%, 60% {
+    transform: translateZ(-2vmin) scale(0.95);
+  }
+}
+.cube-bottom:after {
+  content: &quot;&quot;;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #DFF4F0;
+  -webkit-animation: cube-bottom-flash 4s infinite both;
+          animation: cube-bottom-flash 4s infinite both;
+  will-change: transform;
+}
+@-webkit-keyframes cube-bottom-flash {
+  from, 40%, 50%, to {
+    opacity: 0;
+  }
+  45% {
+    opacity: 0.9;
+  }
+}
+@keyframes cube-bottom-flash {
+  from, 40%, 50%, to {
+    opacity: 0;
+  }
+  45% {
+    opacity: 0.9;
+  }
+}
+
+[class^=shadow] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: var(--shadow-filter, blur(20px));
+}
+[class^=shadow], [class^=shadow]:before {
+  will-change: transform;
+}
+[class^=shadow]:before {
+  content: &quot;&quot;;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #214354;
+  opacity: 0.7;
+}
+
+.shadow-y {
+  -webkit-animation: shadow-y 4s infinite both;
+          animation: shadow-y 4s infinite both;
+}
+.shadow-y[data-cube^=&quot;11&quot;], .shadow-y[data-cube^=&quot;21&quot;] {
+  left: 10%;
+}
+.shadow-y[data-cube^=&quot;13&quot;], .shadow-y[data-cube^=&quot;23&quot;] {
+  left: -10%;
+}
+@-webkit-keyframes shadow-y {
+  to, 40%, 60%, 80%, from {
+    transform: translateY(-100%) scale(2, 0.75);
+  }
+  20% {
+    transform: scale(2, 1);
+  }
+}
+@keyframes shadow-y {
+  to, 40%, 60%, 80%, from {
+    transform: translateY(-100%) scale(2, 0.75);
+  }
+  20% {
+    transform: scale(2, 1);
+  }
+}
+.shadow-y:before {
+  -webkit-animation: shadow-y-inverse 4s infinite both;
+          animation: shadow-y-inverse 4s infinite both;
+  transform-origin: top center;
+}
+@-webkit-keyframes shadow-y-inverse {
+  to, 40%, 60%, 80%, from {
+    opacity: 0.9;
+    transform: scale(2, 1);
+  }
+  20% {
+    opacity: 0;
+    transform: translateY(-100%) scale(2, 0.75);
+  }
+}
+@keyframes shadow-y-inverse {
+  to, 40%, 60%, 80%, from {
+    opacity: 0.9;
+    transform: scale(2, 1);
+  }
+  20% {
+    opacity: 0;
+    transform: translateY(-100%) scale(2, 0.75);
+  }
+}
+
+.shadow-flip {
+  width: 2vmin;
+  height: 50%;
+  top: -1vmin;
+  left: calc(50% - 1vmin);
+  transform-origin: top center;
+  filter: var(--shadow-filter, blur(1vmin));
+  -webkit-animation: shadow-flip 4s infinite both;
+          animation: shadow-flip 4s infinite both;
+  overflow: visible;
+}
+@-webkit-keyframes shadow-flip {
+  from, 20%, 40%, 50%, to {
+    transform: rotate(90deg);
+  }
+  45% {
+    transform: rotate(270deg);
+  }
+}
+@keyframes shadow-flip {
+  from, 20%, 40%, 50%, to {
+    transform: rotate(90deg);
+  }
+  45% {
+    transform: rotate(270deg);
+  }
+}
+.shadow-flip:before {
+  -webkit-animation: shadow-flip-inverse 4s infinite both;
+          animation: shadow-flip-inverse 4s infinite both;
+  transform-origin: top center;
+  opacity: 0;
+}
+@-webkit-keyframes shadow-flip-inverse {
+  from, 20%, 40%, 50%, to {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  45% {
+    transform: rotate(-180deg);
+    opacity: 0.6;
+  }
+}
+@keyframes shadow-flip-inverse {
+  from, 20%, 40%, 50%, to {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  45% {
+    transform: rotate(-180deg);
+    opacity: 0.6;
+  }
+}
+
+.shadow-z {
+  -webkit-animation: shadow-z 4s infinite both;
+          animation: shadow-z 4s infinite both;
+  overflow: visible;
+  will-change: transform;
+  transform-origin: top center;
+}
+.shadow-z[data-cube^=&quot;11&quot;] {
+  --shadow-z-left: 50%;
+  --shadow-z-top: 50%;
+}
+.shadow-z[data-cube^=&quot;21&quot;], .shadow-z[data-cube^=&quot;31&quot;] {
+  --shadow-z-left: 50%;
+  --shadow-z-top: 0;
+}
+.shadow-z[data-cube^=&quot;32&quot;] {
+  --shadow-z-left: 0;
+  --shadow-z-top: 0;
+  --shadow-x-scale: 2;
+}
+.shadow-z[data-cube^=&quot;33&quot;] {
+  --shadow-z-left: -50%;
+  --shadow-z-top: 0;
+}
+@-webkit-keyframes shadow-z {
+  from, 40%, 60%, 80%, to {
+    transform: scale(var(--shadow-x-scale), 2);
+  }
+  20% {
+    transform: translateX(var(--shadow-z-left)) translateY(var(--shadow-z-top)) scale(calc(var(--shadow-x-scale, 1) / 2), 2);
+  }
+}
+@keyframes shadow-z {
+  from, 40%, 60%, 80%, to {
+    transform: scale(var(--shadow-x-scale), 2);
+  }
+  20% {
+    transform: translateX(var(--shadow-z-left)) translateY(var(--shadow-z-top)) scale(calc(var(--shadow-x-scale, 1) / 2), 2);
+  }
+}
+.shadow-z:before {
+  -webkit-animation: shadow-z-inverse 4s infinite both;
+          animation: shadow-z-inverse 4s infinite both;
+}
+@-webkit-keyframes shadow-z-inverse {
+  40%, 60% {
+    transform: translateX(var(--shadow-z-left)) translateY(var(--shadow-z-top)) scale(var(--shadow-x-scale, 1), 2);
+  }
+  45% {
+    opacity: 0;
+  }
+  from, 40%, 55% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+  from, 20%, 80%, to {
+    transform: scale(2);
+  }
+}
+@keyframes shadow-z-inverse {
+  40%, 60% {
+    transform: translateX(var(--shadow-z-left)) translateY(var(--shadow-z-top)) scale(var(--shadow-x-scale, 1), 2);
+  }
+  45% {
+    opacity: 0;
+  }
+  from, 40%, 55% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+  from, 20%, 80%, to {
+    transform: scale(2);
+  }
+  
+  
+  
+
+
+  
+  
+
+}
+
+.cube[data-cube=&quot;111&quot;] > .cube-wrap, .cube[data-cube=&quot;111&quot;] > .cube-wrap:before, .cube[data-cube=&quot;111&quot;] > .cube-wrap:after, .cube[data-cube=&quot;111&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;111&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;111&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 222ms;
+          animation-delay: 222ms;
+}
+.cube[data-cube=&quot;111&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 222ms;
+          animation-delay: 222ms;
+}
+
+[class^=shadow-][data-cube=&quot;111&quot;]:before,
+.large-shadow[data-cube=&quot;111&quot;] {
+  -webkit-animation-delay: 222ms;
+          animation-delay: 222ms;
+}
+
+.cube[data-cube=&quot;112&quot;] > .cube-wrap, .cube[data-cube=&quot;112&quot;] > .cube-wrap:before, .cube[data-cube=&quot;112&quot;] > .cube-wrap:after, .cube[data-cube=&quot;112&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;112&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;112&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 257ms;
+          animation-delay: 257ms;
+}
+.cube[data-cube=&quot;112&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 257ms;
+          animation-delay: 257ms;
+}
+
+[class^=shadow-][data-cube=&quot;112&quot;]:before,
+.large-shadow[data-cube=&quot;112&quot;] {
+  -webkit-animation-delay: 257ms;
+          animation-delay: 257ms;
+}
+
+.cube[data-cube=&quot;113&quot;] > .cube-wrap, .cube[data-cube=&quot;113&quot;] > .cube-wrap:before, .cube[data-cube=&quot;113&quot;] > .cube-wrap:after, .cube[data-cube=&quot;113&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;113&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;113&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 245ms;
+          animation-delay: 245ms;
+}
+.cube[data-cube=&quot;113&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 245ms;
+          animation-delay: 245ms;
+}
+
+[class^=shadow-][data-cube=&quot;113&quot;]:before,
+.large-shadow[data-cube=&quot;113&quot;] {
+  -webkit-animation-delay: 245ms;
+          animation-delay: 245ms;
+}
+
+.cube[data-cube=&quot;121&quot;] > .cube-wrap, .cube[data-cube=&quot;121&quot;] > .cube-wrap:before, .cube[data-cube=&quot;121&quot;] > .cube-wrap:after, .cube[data-cube=&quot;121&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;121&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;121&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 95ms;
+          animation-delay: 95ms;
+}
+.cube[data-cube=&quot;121&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 95ms;
+          animation-delay: 95ms;
+}
+
+[class^=shadow-][data-cube=&quot;121&quot;]:before,
+.large-shadow[data-cube=&quot;121&quot;] {
+  -webkit-animation-delay: 95ms;
+          animation-delay: 95ms;
+}
+
+.cube[data-cube=&quot;122&quot;] > .cube-wrap, .cube[data-cube=&quot;122&quot;] > .cube-wrap:before, .cube[data-cube=&quot;122&quot;] > .cube-wrap:after, .cube[data-cube=&quot;122&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;122&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;122&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 15ms;
+          animation-delay: 15ms;
+}
+.cube[data-cube=&quot;122&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 15ms;
+          animation-delay: 15ms;
+}
+
+[class^=shadow-][data-cube=&quot;122&quot;]:before,
+.large-shadow[data-cube=&quot;122&quot;] {
+  -webkit-animation-delay: 15ms;
+          animation-delay: 15ms;
+}
+
+.cube[data-cube=&quot;123&quot;] > .cube-wrap, .cube[data-cube=&quot;123&quot;] > .cube-wrap:before, .cube[data-cube=&quot;123&quot;] > .cube-wrap:after, .cube[data-cube=&quot;123&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;123&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;123&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 70ms;
+          animation-delay: 70ms;
+}
+.cube[data-cube=&quot;123&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 70ms;
+          animation-delay: 70ms;
+}
+
+[class^=shadow-][data-cube=&quot;123&quot;]:before,
+.large-shadow[data-cube=&quot;123&quot;] {
+  -webkit-animation-delay: 70ms;
+          animation-delay: 70ms;
+}
+
+.cube[data-cube=&quot;131&quot;] > .cube-wrap, .cube[data-cube=&quot;131&quot;] > .cube-wrap:before, .cube[data-cube=&quot;131&quot;] > .cube-wrap:after, .cube[data-cube=&quot;131&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;131&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;131&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 79ms;
+          animation-delay: 79ms;
+}
+.cube[data-cube=&quot;131&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 79ms;
+          animation-delay: 79ms;
+}
+
+[class^=shadow-][data-cube=&quot;131&quot;]:before,
+.large-shadow[data-cube=&quot;131&quot;] {
+  -webkit-animation-delay: 79ms;
+          animation-delay: 79ms;
+}
+
+.cube[data-cube=&quot;132&quot;] > .cube-wrap, .cube[data-cube=&quot;132&quot;] > .cube-wrap:before, .cube[data-cube=&quot;132&quot;] > .cube-wrap:after, .cube[data-cube=&quot;132&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;132&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;132&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 260ms;
+          animation-delay: 260ms;
+}
+.cube[data-cube=&quot;132&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 260ms;
+          animation-delay: 260ms;
+}
+
+[class^=shadow-][data-cube=&quot;132&quot;]:before,
+.large-shadow[data-cube=&quot;132&quot;] {
+  -webkit-animation-delay: 260ms;
+          animation-delay: 260ms;
+}
+
+.cube[data-cube=&quot;133&quot;] > .cube-wrap, .cube[data-cube=&quot;133&quot;] > .cube-wrap:before, .cube[data-cube=&quot;133&quot;] > .cube-wrap:after, .cube[data-cube=&quot;133&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;133&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;133&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 10ms;
+          animation-delay: 10ms;
+}
+.cube[data-cube=&quot;133&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 10ms;
+          animation-delay: 10ms;
+}
+
+[class^=shadow-][data-cube=&quot;133&quot;]:before,
+.large-shadow[data-cube=&quot;133&quot;] {
+  -webkit-animation-delay: 10ms;
+          animation-delay: 10ms;
+}
+
+.cube[data-cube=&quot;211&quot;] > .cube-wrap, .cube[data-cube=&quot;211&quot;] > .cube-wrap:before, .cube[data-cube=&quot;211&quot;] > .cube-wrap:after, .cube[data-cube=&quot;211&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;211&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;211&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 3ms;
+          animation-delay: 3ms;
+}
+.cube[data-cube=&quot;211&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 3ms;
+          animation-delay: 3ms;
+}
+
+[class^=shadow-][data-cube=&quot;211&quot;]:before,
+.large-shadow[data-cube=&quot;211&quot;] {
+  -webkit-animation-delay: 3ms;
+          animation-delay: 3ms;
+}
+
+.cube[data-cube=&quot;212&quot;] > .cube-wrap, .cube[data-cube=&quot;212&quot;] > .cube-wrap:before, .cube[data-cube=&quot;212&quot;] > .cube-wrap:after, .cube[data-cube=&quot;212&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;212&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;212&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 270ms;
+          animation-delay: 270ms;
+}
+.cube[data-cube=&quot;212&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 270ms;
+          animation-delay: 270ms;
+}
+
+[class^=shadow-][data-cube=&quot;212&quot;]:before,
+.large-shadow[data-cube=&quot;212&quot;] {
+  -webkit-animation-delay: 270ms;
+          animation-delay: 270ms;
+}
+
+.cube[data-cube=&quot;213&quot;] > .cube-wrap, .cube[data-cube=&quot;213&quot;] > .cube-wrap:before, .cube[data-cube=&quot;213&quot;] > .cube-wrap:after, .cube[data-cube=&quot;213&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;213&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;213&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 86ms;
+          animation-delay: 86ms;
+}
+.cube[data-cube=&quot;213&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 86ms;
+          animation-delay: 86ms;
+}
+
+[class^=shadow-][data-cube=&quot;213&quot;]:before,
+.large-shadow[data-cube=&quot;213&quot;] {
+  -webkit-animation-delay: 86ms;
+          animation-delay: 86ms;
+}
+
+.cube[data-cube=&quot;221&quot;] > .cube-wrap, .cube[data-cube=&quot;221&quot;] > .cube-wrap:before, .cube[data-cube=&quot;221&quot;] > .cube-wrap:after, .cube[data-cube=&quot;221&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;221&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;221&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 185ms;
+          animation-delay: 185ms;
+}
+.cube[data-cube=&quot;221&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 185ms;
+          animation-delay: 185ms;
+}
+
+[class^=shadow-][data-cube=&quot;221&quot;]:before,
+.large-shadow[data-cube=&quot;221&quot;] {
+  -webkit-animation-delay: 185ms;
+          animation-delay: 185ms;
+}
+
+.cube[data-cube=&quot;222&quot;] > .cube-wrap, .cube[data-cube=&quot;222&quot;] > .cube-wrap:before, .cube[data-cube=&quot;222&quot;] > .cube-wrap:after, .cube[data-cube=&quot;222&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;222&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;222&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 133ms;
+          animation-delay: 133ms;
+}
+.cube[data-cube=&quot;222&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 133ms;
+          animation-delay: 133ms;
+}
+
+[class^=shadow-][data-cube=&quot;222&quot;]:before,
+.large-shadow[data-cube=&quot;222&quot;] {
+  -webkit-animation-delay: 133ms;
+          animation-delay: 133ms;
+}
+
+.cube[data-cube=&quot;223&quot;] > .cube-wrap, .cube[data-cube=&quot;223&quot;] > .cube-wrap:before, .cube[data-cube=&quot;223&quot;] > .cube-wrap:after, .cube[data-cube=&quot;223&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;223&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;223&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 278ms;
+          animation-delay: 278ms;
+}
+.cube[data-cube=&quot;223&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 278ms;
+          animation-delay: 278ms;
+}
+
+[class^=shadow-][data-cube=&quot;223&quot;]:before,
+.large-shadow[data-cube=&quot;223&quot;] {
+  -webkit-animation-delay: 278ms;
+          animation-delay: 278ms;
+}
+
+.cube[data-cube=&quot;231&quot;] > .cube-wrap, .cube[data-cube=&quot;231&quot;] > .cube-wrap:before, .cube[data-cube=&quot;231&quot;] > .cube-wrap:after, .cube[data-cube=&quot;231&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;231&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;231&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 119ms;
+          animation-delay: 119ms;
+}
+.cube[data-cube=&quot;231&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 119ms;
+          animation-delay: 119ms;
+}
+
+[class^=shadow-][data-cube=&quot;231&quot;]:before,
+.large-shadow[data-cube=&quot;231&quot;] {
+  -webkit-animation-delay: 119ms;
+          animation-delay: 119ms;
+}
+
+.cube[data-cube=&quot;232&quot;] > .cube-wrap, .cube[data-cube=&quot;232&quot;] > .cube-wrap:before, .cube[data-cube=&quot;232&quot;] > .cube-wrap:after, .cube[data-cube=&quot;232&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;232&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;232&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 38ms;
+          animation-delay: 38ms;
+}
+.cube[data-cube=&quot;232&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 38ms;
+          animation-delay: 38ms;
+}
+
+[class^=shadow-][data-cube=&quot;232&quot;]:before,
+.large-shadow[data-cube=&quot;232&quot;] {
+  -webkit-animation-delay: 38ms;
+          animation-delay: 38ms;
+}
+
+.cube[data-cube=&quot;233&quot;] > .cube-wrap, .cube[data-cube=&quot;233&quot;] > .cube-wrap:before, .cube[data-cube=&quot;233&quot;] > .cube-wrap:after, .cube[data-cube=&quot;233&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;233&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;233&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 271ms;
+          animation-delay: 271ms;
+}
+.cube[data-cube=&quot;233&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 271ms;
+          animation-delay: 271ms;
+}
+
+[class^=shadow-][data-cube=&quot;233&quot;]:before,
+.large-shadow[data-cube=&quot;233&quot;] {
+  -webkit-animation-delay: 271ms;
+          animation-delay: 271ms;
+}
+
+.cube[data-cube=&quot;311&quot;] > .cube-wrap, .cube[data-cube=&quot;311&quot;] > .cube-wrap:before, .cube[data-cube=&quot;311&quot;] > .cube-wrap:after, .cube[data-cube=&quot;311&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;311&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;311&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 86ms;
+          animation-delay: 86ms;
+}
+.cube[data-cube=&quot;311&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 86ms;
+          animation-delay: 86ms;
+}
+
+[class^=shadow-][data-cube=&quot;311&quot;]:before,
+.large-shadow[data-cube=&quot;311&quot;] {
+  -webkit-animation-delay: 86ms;
+          animation-delay: 86ms;
+}
+
+.cube[data-cube=&quot;312&quot;] > .cube-wrap, .cube[data-cube=&quot;312&quot;] > .cube-wrap:before, .cube[data-cube=&quot;312&quot;] > .cube-wrap:after, .cube[data-cube=&quot;312&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;312&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;312&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 98ms;
+          animation-delay: 98ms;
+}
+.cube[data-cube=&quot;312&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 98ms;
+          animation-delay: 98ms;
+}
+
+[class^=shadow-][data-cube=&quot;312&quot;]:before,
+.large-shadow[data-cube=&quot;312&quot;] {
+  -webkit-animation-delay: 98ms;
+          animation-delay: 98ms;
+}
+
+.cube[data-cube=&quot;313&quot;] > .cube-wrap, .cube[data-cube=&quot;313&quot;] > .cube-wrap:before, .cube[data-cube=&quot;313&quot;] > .cube-wrap:after, .cube[data-cube=&quot;313&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;313&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;313&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 147ms;
+          animation-delay: 147ms;
+}
+.cube[data-cube=&quot;313&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 147ms;
+          animation-delay: 147ms;
+}
+
+[class^=shadow-][data-cube=&quot;313&quot;]:before,
+.large-shadow[data-cube=&quot;313&quot;] {
+  -webkit-animation-delay: 147ms;
+          animation-delay: 147ms;
+}
+
+.cube[data-cube=&quot;321&quot;] > .cube-wrap, .cube[data-cube=&quot;321&quot;] > .cube-wrap:before, .cube[data-cube=&quot;321&quot;] > .cube-wrap:after, .cube[data-cube=&quot;321&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;321&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;321&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 73ms;
+          animation-delay: 73ms;
+}
+.cube[data-cube=&quot;321&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 73ms;
+          animation-delay: 73ms;
+}
+
+[class^=shadow-][data-cube=&quot;321&quot;]:before,
+.large-shadow[data-cube=&quot;321&quot;] {
+  -webkit-animation-delay: 73ms;
+          animation-delay: 73ms;
+}
+
+.cube[data-cube=&quot;322&quot;] > .cube-wrap, .cube[data-cube=&quot;322&quot;] > .cube-wrap:before, .cube[data-cube=&quot;322&quot;] > .cube-wrap:after, .cube[data-cube=&quot;322&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;322&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;322&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 216ms;
+          animation-delay: 216ms;
+}
+.cube[data-cube=&quot;322&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 216ms;
+          animation-delay: 216ms;
+}
+
+[class^=shadow-][data-cube=&quot;322&quot;]:before,
+.large-shadow[data-cube=&quot;322&quot;] {
+  -webkit-animation-delay: 216ms;
+          animation-delay: 216ms;
+}
+
+.cube[data-cube=&quot;323&quot;] > .cube-wrap, .cube[data-cube=&quot;323&quot;] > .cube-wrap:before, .cube[data-cube=&quot;323&quot;] > .cube-wrap:after, .cube[data-cube=&quot;323&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;323&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;323&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 243ms;
+          animation-delay: 243ms;
+}
+.cube[data-cube=&quot;323&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 243ms;
+          animation-delay: 243ms;
+}
+
+[class^=shadow-][data-cube=&quot;323&quot;]:before,
+.large-shadow[data-cube=&quot;323&quot;] {
+  -webkit-animation-delay: 243ms;
+          animation-delay: 243ms;
+}
+
+.cube[data-cube=&quot;331&quot;] > .cube-wrap, .cube[data-cube=&quot;331&quot;] > .cube-wrap:before, .cube[data-cube=&quot;331&quot;] > .cube-wrap:after, .cube[data-cube=&quot;331&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;331&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;331&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 52ms;
+          animation-delay: 52ms;
+}
+.cube[data-cube=&quot;331&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 52ms;
+          animation-delay: 52ms;
+}
+
+[class^=shadow-][data-cube=&quot;331&quot;]:before,
+.large-shadow[data-cube=&quot;331&quot;] {
+  -webkit-animation-delay: 52ms;
+          animation-delay: 52ms;
+}
+
+.cube[data-cube=&quot;332&quot;] > .cube-wrap, .cube[data-cube=&quot;332&quot;] > .cube-wrap:before, .cube[data-cube=&quot;332&quot;] > .cube-wrap:after, .cube[data-cube=&quot;332&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;332&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;332&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 47ms;
+          animation-delay: 47ms;
+}
+.cube[data-cube=&quot;332&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 47ms;
+          animation-delay: 47ms;
+}
+
+[class^=shadow-][data-cube=&quot;332&quot;]:before,
+.large-shadow[data-cube=&quot;332&quot;] {
+  -webkit-animation-delay: 47ms;
+          animation-delay: 47ms;
+}
+
+.cube[data-cube=&quot;333&quot;] > .cube-wrap, .cube[data-cube=&quot;333&quot;] > .cube-wrap:before, .cube[data-cube=&quot;333&quot;] > .cube-wrap:after, .cube[data-cube=&quot;333&quot;] > .cube-wrap > [class^=cube-], .cube[data-cube=&quot;333&quot;] > .cube-wrap > [class^=cube-]:before, .cube[data-cube=&quot;333&quot;] > .cube-wrap > [class^=cube-]:after {
+  -webkit-animation-delay: 65ms;
+          animation-delay: 65ms;
+}
+.cube[data-cube=&quot;333&quot;] > .cube-wrap [class^=shadow-] {
+  -webkit-animation-delay: 65ms;
+          animation-delay: 65ms;
+}
+
+[class^=shadow-][data-cube=&quot;333&quot;]:before,
+.large-shadow[data-cube=&quot;333&quot;] {
+  -webkit-animation-delay: 65ms;
+          animation-delay: 65ms;
+}
+
+
+
+
+  
+
+
+
+
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage(&quot;resize&quot;, &quot;*&quot;);
+  }
+</script>
+
+
+</head>
+
+
+
+<!-- Processo WBIN -->
+
+
+
+<h1> WBIN </h1>
+<!--<p> Web Business Intelligence <p/> -->
+
+
+<style>
+
+  h1{
+color:white;
+
+font-size: 45px;
+display:flex;
+justify-content: space-between;
+align-items:center;
+padding:250px;
+
+}
+
+
+p {
+color:white;
+display:flex;
+font-size: 15px;
+
+justify-content: space-between;
+align-items:right;
+
+
+}
+</style>
+
+
+
+<!-- Processo WBIN -->
+
+<body translate=&quot;no&quot; >
+  
+<div class=&quot;cubes&quot;>
+  <!--   row, column, z -->
+  
+    
+
+  
+  <div class=&quot;cube&quot; data-cube=&quot;111&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-z&quot; data-cube=&quot;112&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;121&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;131&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-z&quot; data-cube=&quot;132&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;211&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;111&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;111&quot;></div>
+        <div class=&quot;shadow-z&quot; data-cube=&quot;212&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;221&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;121&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;121&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;231&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;131&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;131&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;311&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;211&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;211&quot;></div>
+        <div class=&quot;shadow-z&quot; data-cube=&quot;312&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;321&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;221&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;221&quot;></div>
+        <div class=&quot;shadow-z&quot; data-cube=&quot;322&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;331&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;231&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;231&quot;></div>
+        <div class=&quot;shadow-z&quot; data-cube=&quot;332&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+
+  <!-- top layer -->
+  <div class=&quot;cube&quot; data-cube=&quot;112&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;122&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;132&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;212&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;112&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;112&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;222&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;122&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;122&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;232&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;132&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;132&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;312&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;212&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;212&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;322&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;222&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;222&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;332&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;232&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;232&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+
+  <!-- bottom layer -->
+  <div class=&quot;cube&quot; data-cube=&quot;113&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-z&quot; data-cube=&quot;111&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;123&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-z&quot; data-cube=&quot;121&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;133&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;213&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;113&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;113&quot;></div>
+        <div class=&quot;shadow-z&quot; data-cube=&quot;211&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;223&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;123&quot;></div>
+        <div class=&quot;shadow-z&quot; data-cube=&quot;221&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;233&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;133&quot;></div>
+        <div class=&quot;shadow-z&quot; data-cube=&quot;231&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;313&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;213&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;213&quot;></div>
+        <div class=&quot;shadow-z&quot; data-cube=&quot;311&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;323&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;223&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;223&quot;></div>
+        <div class=&quot;shadow-z&quot; data-cube=&quot;321&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  <div class=&quot;cube&quot; data-cube=&quot;333&quot;>
+    <div class=&quot;cube-wrap&quot;>
+      <div class=&quot;cube-top&quot;>
+        <div class=&quot;shadow-flip&quot; data-cube=&quot;233&quot;></div>
+        <div class=&quot;shadow-y&quot; data-cube=&quot;233&quot;></div>
+        <div class=&quot;shadow-z&quot; data-cube=&quot;331&quot;></div>
+      </div>
+      <div class=&quot;cube-bottom&quot;></div>
+      <div class=&quot;cube-front-left&quot;></div>
+      <div class=&quot;cube-front-right&quot;></div>
+      <div class=&quot;cube-back-left&quot;></div>
+      <div class=&quot;cube-back-right&quot;></div>
+    </div>
+  </div>
+  
+  <div class=&quot;large-shadows&quot;>
+    <div class=&quot;large-shadow&quot; data-cube=&quot;113&quot;></div>
+    <div class=&quot;large-shadow&quot; data-cube=&quot;123&quot;></div>
+    <div class=&quot;large-shadow&quot; data-cube=&quot;133&quot;></div>
+    <div class=&quot;large-shadow&quot; data-cube=&quot;213&quot;></div>
+    <div class=&quot;large-shadow&quot; data-cube=&quot;223&quot;></div>
+    <div class=&quot;large-shadow&quot; data-cube=&quot;233&quot;></div>
+    <div class=&quot;large-shadow&quot; data-cube=&quot;313&quot;></div>
+    <div class=&quot;large-shadow&quot; data-cube=&quot;323&quot;></div>
+    <div class=&quot;large-shadow&quot; data-cube=&quot;333&quot;></div>
+  </div>
+</div>
+    <script src=&quot;https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js&quot;></script>
+
+  
+      <script id=&quot;rendered-js&quot; >
+// I was going to use THREE.js but I forgot.
+//# sourceURL=pen.js
+    </script>
+
+   <div class="classewbin"></div>
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+ 
+
+
+  </div>
+</body>
+</html>
